@@ -37,13 +37,15 @@ class User {
     }
 
     public function insertCard() {
-        $today = date("Y");
-        var_dump($today);
+        $confirm= "";
+        $today = date("Y-m-d");
         if ($this->expire_date > $today) {
-            echo 'you can buy';
+            $confirm = 'La tua carta è valida, procedi all\'acquisto';
         } else {
-            echo 'your card is expired';
+            $confirm = 'La tua carta è scaduta, non potrai procedere per il pagamento';
         }
+
+        return $confirm;
     }
 }
 ?>

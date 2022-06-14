@@ -16,14 +16,14 @@ $croccantelle = new Food('Cibo','croccantelle', 3, 'carne mista ovina', 200);
 $pupazzo = new Game('Gioco', 'pupazzo', 20);
 $woodhouse = new Bed('Cuccie', 'cuccia in legno', 50, '5x7');
 
-$alex = new User('Alex Capoluongo', 'alex@gmail.com', false, 2025);
+$alex = new User('Alex Capoluongo', 'alex@gmail.com', false, date("2023-08-14"));
 $alex->addItemToCard($pupazzo);
 $alex->addItemToCard($woodhouse);
 $alex->getTotal();
 $alex->getRegistered();
 $alex->insertCard();
 
-$frank = new User('Frank Poirot', 'ppp@gmail.com', false, 2019);
+$frank = new User('Frank Poirot', 'ppp@gmail.com', false, date("2020-08-14"));
 $frank->addItemToCard($woodhouse);
 $frank->addItemToCard($woodhouse);
 $frank->insertCard();
@@ -51,6 +51,8 @@ echo date('j F Y');
             } 
     ?></ul>
     <p><?php echo "il carrello totale è  di" . " " . $alex->getTotal()?></p>
+    <p><?php echo $alex->insertCard() ?></p>
+
     <!-- test su frank -->
     <h3>Nel carrello di Frank ci sono: </h3>
     <ul><?php foreach($frank->cart as $item) 
@@ -59,6 +61,7 @@ echo date('j F Y');
             } 
     ?></ul>
     <p><?php echo "il carrello totale è  di" . " " . $frank->getTotal() . "€"?></p>
+    <p><?php echo $frank->insertCard() ?></p>
 
 </body>
 </html>
