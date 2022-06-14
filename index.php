@@ -13,18 +13,21 @@ require_once __DIR__ . "/Bed.php";
 require_once __DIR__ . "/User.php";
 
 $croccantelle = new Food('Cibo','croccantelle', 3, 'carne', 200);
-var_dump($croccantelle);
 $pupazzo = new Game('gioco', 'pupazzo', 20);
 $woodhouse = new Bed('Cuccie', 'cuccia di legno', 50, '5x7');
-$alex = new User('Alex Capoluongo', 'alex@gmail.com');
+
+$alex = new User('Alex Capoluongo', 'alex@gmail.com', false);
 $alex->addItemToCard($pupazzo);
 $alex->addItemToCard($woodhouse);
 $alex->getTotal();
 $alex->getRegistered();
 var_dump($alex);
-$frank = new User('Frank Poirot', 'ppp@gmail.com');
+
+$frank = new User('Frank Poirot', 'ppp@gmail.com', false);
 $frank->addItemToCard($woodhouse);
 $frank->addItemToCard($woodhouse);
+$frank->getRegistered();
+var_dump($frank);
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +51,7 @@ $frank->addItemToCard($woodhouse);
     <p><?php echo "il carrello totale è  di" . " " . $alex->getTotal()?></p>
     <p><?php echo "Essendo registrato al sito, il carrello totale sarà scontato al 20%. <br><b>Totale</b>: " . " " . $alex->getRegistered()?></p>
     <!-- test su frank -->
-    <p><?php echo "il carrello totale è  di" . " " . $frank->getRegistered()?></p>
+    <p><?php echo "il carrello totale è  di" . " " . $frank->getTotal() . "€"?></p>
 
 </body>
 </html>
