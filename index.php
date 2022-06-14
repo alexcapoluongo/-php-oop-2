@@ -8,10 +8,13 @@
 //CREARE classi figlie che importano product -> andranno in index
 
 require_once __DIR__ . "/Food.php";
+require_once __DIR__ . "/Game.php";
+require_once __DIR__ . "/Bed.php";
 
-$croccantelle = new Food('Cibo','croccantelle', 3);
-
+$croccantelle = new Food('Cibo','croccantelle', 3, 'carne', 200);
 var_dump($croccantelle);
+$pupazzo = new Game('gioco', 'pupazzzo', 20);
+$woodhouse = new Bed('Cuccie', 'cuccia di legno', 50, '5x7')
 ?>
 
 <!DOCTYPE html>
@@ -24,5 +27,7 @@ var_dump($croccantelle);
 </head>
 <body>
     <p><?php echo $croccantelle->printInfo() ?></p>
+    <p><?php echo $pupazzo->printInfo()?></p>
+    <p><?php echo $woodhouse->printInfo()?></p>
 </body>
 </html>
