@@ -18,6 +18,8 @@ $pupazzo = new Game('gioco', 'pupazzo', 20);
 $woodhouse = new Bed('Cuccie', 'cuccia di legno', 50, '5x7');
 $alex = new User('Alex Capoluongo', 'alex@gmail.com');
 $alex->addItemToCard($pupazzo);
+$alex->addItemToCard($woodhouse);
+$alex->getTotal();
 var_dump($alex);
 ?>
 
@@ -33,6 +35,7 @@ var_dump($alex);
     <p><?php echo $croccantelle->printInfo() ?></p>
     <p><?php echo $pupazzo->printInfo()?></p>
     <p><?php echo $woodhouse->printInfo()?></p>
+    <p><?php echo $alex->getTotal()?></p>
 
 </body>
 </html>
