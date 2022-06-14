@@ -10,11 +10,15 @@
 require_once __DIR__ . "/Food.php";
 require_once __DIR__ . "/Game.php";
 require_once __DIR__ . "/Bed.php";
+require_once __DIR__ . "/User.php";
 
 $croccantelle = new Food('Cibo','croccantelle', 3, 'carne', 200);
 var_dump($croccantelle);
-$pupazzo = new Game('gioco', 'pupazzzo', 20);
-$woodhouse = new Bed('Cuccie', 'cuccia di legno', 50, '5x7')
+$pupazzo = new Game('gioco', 'pupazzo', 20);
+$woodhouse = new Bed('Cuccie', 'cuccia di legno', 50, '5x7');
+$alex = new User('Alex Capoluongo', 'alex@gmail.com');
+$alex->addItemToCard($pupazzo);
+var_dump($alex);
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +27,12 @@ $woodhouse = new Bed('Cuccie', 'cuccia di legno', 50, '5x7')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>E-commerce</title>
 </head>
 <body>
     <p><?php echo $croccantelle->printInfo() ?></p>
     <p><?php echo $pupazzo->printInfo()?></p>
     <p><?php echo $woodhouse->printInfo()?></p>
+
 </body>
 </html>

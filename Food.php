@@ -10,5 +10,9 @@ class Food extends Product {
         $this->material = $_material;
         $this->calories = $_calories;
     }
+
+    public function printInfo() {
+        return "$this->category $this->name = $this->price €, composto di $this->material avente $this->calories calorie";
+    }
 }
 ?>

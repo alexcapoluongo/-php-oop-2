@@ -9,5 +9,9 @@ class Bed extends Product {
         parent::__construct($_category, $_name, $_price);
         $this->meters = $_meters;
     }
+
+    public function printInfo() {
+        return "$this->category $this->name = $this->price €, misura $this->meters";
+    }
 }
 ?>
