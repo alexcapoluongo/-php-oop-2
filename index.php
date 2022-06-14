@@ -12,22 +12,19 @@ require_once __DIR__ . "/Game.php";
 require_once __DIR__ . "/Bed.php";
 require_once __DIR__ . "/User.php";
 
-$croccantelle = new Food('Cibo','croccantelle', 3, 'carne', 200);
-$pupazzo = new Game('gioco', 'pupazzo', 20);
-$woodhouse = new Bed('Cuccie', 'cuccia di legno', 50, '5x7');
+$croccantelle = new Food('Cibo','croccantelle', 3, 'carne mista ovina', 200);
+$pupazzo = new Game('Gioco', 'pupazzo', 20);
+$woodhouse = new Bed('Cuccie', 'cuccia in legno', 50, '5x7');
 
 $alex = new User('Alex Capoluongo', 'alex@gmail.com', false);
 $alex->addItemToCard($pupazzo);
 $alex->addItemToCard($woodhouse);
 $alex->getTotal();
 $alex->getRegistered();
-var_dump($alex);
 
 $frank = new User('Frank Poirot', 'ppp@gmail.com', false);
 $frank->addItemToCard($woodhouse);
 $frank->addItemToCard($woodhouse);
-$frank->getRegistered();
-var_dump($frank);
 ?>
 
 <!DOCTYPE html>
@@ -42,15 +39,20 @@ var_dump($frank);
     <p><?php echo $croccantelle->printInfo() ?></p>
     <p><?php echo $pupazzo->printInfo()?></p>
     <p><?php echo $woodhouse->printInfo()?></p>
-    <h3>Nel tuo carrello ci sono: </h3>
+    <h3>Nel carrello di Alex ci sono: </h3>
     <ul><?php foreach($alex->cart as $item) 
             {
                 echo '<li>' . $item->printInfo() . '</li>';
             } 
     ?></ul>
     <p><?php echo "il carrello totale è  di" . " " . $alex->getTotal()?></p>
-    <p><?php echo "Essendo registrato al sito, il carrello totale sarà scontato al 20%. <br><b>Totale</b>: " . " " . $alex->getRegistered()?></p>
     <!-- test su frank -->
+    <h3>Nel carrello di Frank ci sono: </h3>
+    <ul><?php foreach($frank->cart as $item) 
+            {
+                echo '<li>' . $item->printInfo() . '</li>';
+            } 
+    ?></ul>
     <p><?php echo "il carrello totale è  di" . " " . $frank->getTotal() . "€"?></p>
 
 </body>

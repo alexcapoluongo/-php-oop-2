@@ -24,7 +24,9 @@ class User {
             $totalPrice += $item->price;
         }
         if ($this->registered == true) {
-            $totalPrice = $totalPrice * 0.5;
+            $totalPrice = ($totalPrice * 0.8);
+            echo 'Essendo registrato il tuo prezzo sarà scontato del 20%. ';
+            
         }
         return  $totalPrice;
     }

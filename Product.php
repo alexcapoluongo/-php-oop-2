@@ -11,7 +11,7 @@ class Product {
     }
 
     public function printInfo() {
-        return "$this->category $this->name = $this->price €";
+        return " $this->category $this->name = $this->price €";
     }
 }
 ?>
