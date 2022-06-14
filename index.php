@@ -16,15 +16,20 @@ $croccantelle = new Food('Cibo','croccantelle', 3, 'carne mista ovina', 200);
 $pupazzo = new Game('Gioco', 'pupazzo', 20);
 $woodhouse = new Bed('Cuccie', 'cuccia in legno', 50, '5x7');
 
-$alex = new User('Alex Capoluongo', 'alex@gmail.com', false);
+$alex = new User('Alex Capoluongo', 'alex@gmail.com', false, 2025);
 $alex->addItemToCard($pupazzo);
 $alex->addItemToCard($woodhouse);
 $alex->getTotal();
 $alex->getRegistered();
+$alex->insertCard();
 
-$frank = new User('Frank Poirot', 'ppp@gmail.com', false);
+$frank = new User('Frank Poirot', 'ppp@gmail.com', false, 2019);
 $frank->addItemToCard($woodhouse);
 $frank->addItemToCard($woodhouse);
+$frank->insertCard();
+
+echo date('j F Y');
+
 ?>
 
 <!DOCTYPE html>
