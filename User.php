@@ -14,12 +14,18 @@ class User {
         $this->cart[] = $_product;
     }
 
+    
     public function getTotal() {
         $totalPrice = 0;
         foreach($this->cart as $item) {
             $totalPrice += $item->price;
         }
-        return "il tuo carrello totale è di $totalPrice €";
+        return  $totalPrice;
+    }
+
+    public function getRegistered() {
+        // return $this->getTotal()*0.8 ;
+        return $this->getTotal() * .8;
     }
 }
 ?>
